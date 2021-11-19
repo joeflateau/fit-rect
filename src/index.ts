@@ -6,9 +6,9 @@ export function fitRect(
   target: Rect,
   mode: FitMode = "contain"
 ): Rect {
-  var sw = target.w / rect.w;
-  var sh = target.h / rect.h;
-  var scale = 1;
+  const sw = target.w / rect.w;
+  const sh = target.h / rect.h;
+  let scale = 1;
 
   if (mode == "contain") {
     scale = Math.min(sw, sh);
