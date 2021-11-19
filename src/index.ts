@@ -1,0 +1,33 @@
+/**
+ * Fits one rectangle into another
+ * @param  {Array} rect   [x,y,w,h]
+ * @param  {Array} target [x,y,w,h]
+ * @param  {String} mode   ['contain' (default) or 'cover']
+ * @return {Array}        [x,y,w,h]
+ */
+export function fitRect(
+  rect: Rect,
+  target: Rect,
+  mode: FitMode = "contain"
+): Rect {
+  var sw = target.w / rect.w;
+  var sh = target.h / rect.h;
+  var scale = 1;
+
+  if (mode == "contain") {
+    scale = Math.min(sw, sh);
+  } else if (mode == "cover") {
+    scale = Math.max(sw, sh);
+  }
+
+  return {
+    x: target.x + (target.w - rect.w * scale) / 2,
+    y: target.y + (target.h - rect.h * scale) / 2,
+    w: rect.w * scale,
+    h: rect.h * scale,
+  };
+}
+
+export type Rect = { x: number; y: number; w: number; h: number };
+
+export type FitMode = "contain" | "cover";

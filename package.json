@@ -1,18 +1,21 @@
 {
   "name": "fit-rect",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Fits one rectangle into another",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "license": "MIT",
   "author": {
     "name": "Marcin Ignac",
     "email": "marcin.ignac@gmail.com",
     "url": "https://github.com/vorg"
   },
-  "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "typescript": "^4.5.2"
+  },
   "scripts": {
-    "test": "node test.js"
+    "test": "node test.js",
+    "prepare": "tsc"
   },
   "keywords": [
     "geometry"
