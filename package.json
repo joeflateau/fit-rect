@@ -1,5 +1,5 @@
 {
-  "name": "fit-rect",
+  "name": "@joeflateau/fit-rect",
   "version": "1.0.4",
   "description": "Fits one rectangle into another",
   "main": "./dist/index.js",
@@ -11,6 +11,7 @@
     "url": "https://github.com/vorg"
   },
   "devDependencies": {
+    "release-it": "^14.11.7",
     "typescript": "^4.5.2"
   },
   "scripts": {
@@ -18,7 +19,8 @@
     "prepare": "tsc"
   },
   "keywords": [
-    "geometry"
+    "geometry",
+    "fit-rect"
   ],
   "repository": {
     "type": "git",
