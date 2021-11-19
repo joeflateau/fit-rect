@@ -1,13 +1,21 @@
+const RECT_X = 0;
+const RECT_Y = 1;
+const RECT_W = 2;
+const RECT_H = 3;
+
 /**
  * Fits one rectangle into another
  */
 export function fitRect(
-  rect: Size,
-  target: Rect,
+  rect: Size | Rect,
+  target: Size | Rect,
   mode: FitMode = "contain"
 ): Rect {
-  const sw = target[2] / rect[0];
-  const sh = target[3] / rect[1];
+  rect = sizeOrRectToRect(rect);
+  target = sizeOrRectToRect(target);
+
+  const sw = target[RECT_W] / rect[RECT_W];
+  const sh = target[RECT_H] / rect[RECT_H];
 
   let scale = 1;
   if (mode == "contain") {
@@ -17,10 +25,10 @@ export function fitRect(
   }
 
   return [
-    target[0] + (target[2] - rect[0] * scale) / 2,
-    target[1] + (target[3] - rect[1] * scale) / 2,
-    rect[0] * scale,
-    rect[1] * scale,
+    target[RECT_X] + (target[RECT_W] - rect[RECT_W] * scale) / 2,
+    target[RECT_Y] + (target[RECT_H] - rect[RECT_H] * scale) / 2,
+    rect[RECT_W] * scale,
+    rect[RECT_H] * scale,
   ];
 }
 
@@ -29,3 +37,13 @@ export type Size = [w: number, h: number];
 export type Rect = [x: number, y: number, w: number, h: number];
 
 export type FitMode = "contain" | "cover";
+
+function sizeOrRectToRect(rect: Size | Rect): Rect {
+  if (rect.length === 2) {
+    rect = [0, 0, ...rect];
+  }
+  if (rect.length !== 4) {
+    throw new Error("invalid rect or size length");
+  }
+  return rect;
+}

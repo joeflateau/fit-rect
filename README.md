@@ -16,8 +16,8 @@ fitRect(rect: Size, target: Rect, mode: FitMode): Rect
 
 ##### Parameters:
 
-- `rect` - array [ w, h ]
-- `target` - array [ x, y, w, h ]
+- `rect` - array [ w, h ] or [ x, y, w, h ]
+- `target` - array [ w, h ] or [ x, y, w, h ]
 - `mode` - string 'contain' (default) or 'cover'
 
 ##### Returns:
