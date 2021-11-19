@@ -15,7 +15,8 @@
   },
   "scripts": {
     "test": "node test.js",
-    "prepare": "tsc"
+    "prepare": "tsc",
+    "prepack": "tsc"
   },
   "keywords": [
     "geometry"
