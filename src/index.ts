@@ -1,9 +1,5 @@
 /**
  * Fits one rectangle into another
- * @param  {Array} rect   [x,y,w,h]
- * @param  {Array} target [x,y,w,h]
- * @param  {String} mode   ['contain' (default) or 'cover']
- * @return {Array}        [x,y,w,h]
  */
 export function fitRect(
   rect: Rect,
