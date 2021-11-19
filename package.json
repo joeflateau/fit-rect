@@ -19,10 +19,6 @@
     "ts-node": "^10.4.0",
     "typescript": "^4.5.2"
   },
-  "hooks": {
-    "before:init": "npm test",
-    "after:release": "echo Successfully released ${name} v${version} to ${repo.repository}."
-  },
   "scripts": {
     "test": "mocha --require ts-node/register ./test/**.test.ts",
     "prepare": "tsc",
