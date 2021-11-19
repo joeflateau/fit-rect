@@ -30,5 +30,8 @@
   "homepage": "https://github.com/vorg/fit-rect",
   "bugs": {
     "url": "https://github.com/vorg/fit-rect/issues"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
