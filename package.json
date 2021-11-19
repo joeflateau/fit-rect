@@ -1,6 +1,5 @@
 {
   "name": "@joeflateau/fit-rect",
-  "private": false,
   "version": "1.0.4",
   "description": "Fits one rectangle into another",
   "main": "./dist/index.js",
