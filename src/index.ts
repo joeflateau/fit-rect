@@ -2,7 +2,7 @@
  * Fits one rectangle into another
  */
 export function fitRect(
-  rect: Rect,
+  rect: Size,
   target: Rect,
   mode: FitMode = "contain"
 ): Rect {
@@ -23,6 +23,8 @@ export function fitRect(
     h: rect.h * scale,
   };
 }
+
+export type Size = { w: number; h: number };
 
 export type Rect = { x: number; y: number; w: number; h: number };
 
